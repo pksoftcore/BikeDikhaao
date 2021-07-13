@@ -1,0 +1,40 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{brand}}</li>
+    </ol>
+</nav>
+
+<div class="container">
+
+
+    <div class="row">
+        <div *ngFor="let item of result" class="col-md-6 col-xl-4">
+            <div class="card mb-4 box-shadow">
+                <div class="imgpad p-0 m-0">
+                    <img class="card-img-top" src={{item.b_img}}
+                        data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail"
+                        alt="Card image cap">
+                </div>
+
+                <div class="card-body">
+                    <h5>{{item.b_name}}</h5>
+                    <p class="card-text text-align-left">{{item.b_displacement}}cc, {{item.b_miledge}}kmpl,
+                        {{item.b_weight}}kg,
+                        {{item.b_max_power}}bhp</p>
+                    <p class="m-0">Avg Ex-Showroom Price</p>
+                    <span class="font-weight-bold my-0 py-0">₹{{item.b_price}}/-</span>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group d-block">
+                            <a class="btn btn-sm btn-outline-success d-block" routerLink="/Bike/{{item.b_id}}">Check
+                                OnRoad Price</a>
+                        </div>
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                        <small class="badge badge-success">
+                            {{item.b_rating}} </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

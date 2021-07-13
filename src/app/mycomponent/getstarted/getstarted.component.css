@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap");
+h1 {
+  font-size: 4em;
+}
+
+p {
+  width: 80%;
+  text-align: center;
+}
+.mainget {
+  position: relative;
+  font-family: "Original Surfer", cursive;
+  font-variant: small-caps;
+  color: white;
+  scroll-snap-align: start;
+  text-shadow: 1px 1px 1px black;
+}
+.getstart {
+  position: absolute;
+  top: 0px;
+  margin-top: 10%;
+  padding: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 2px 1px 8px black;
+  background: rgba(29, 28, 28, 0.555);
+}

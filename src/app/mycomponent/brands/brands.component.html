@@ -1,0 +1,12 @@
+<div class="row py-5">
+
+
+    <div class="col-4 col-md-3" *ngFor="let item of brand">
+        <div class="m-3 m-md-5">
+            <a routerLink="/Brand/{{item.b_name}}">
+                <img class="card-img-top" src={{item.b_img}}
+                    data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+            </a>
+        </div>
+    </div>
+</div>
