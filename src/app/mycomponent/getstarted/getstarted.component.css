@@ -4,6 +4,7 @@ h1 {
 }
 
 p {
+  font-size: 1.5em;
   width: 80%;
   text-align: center;
 }
@@ -26,5 +27,5 @@ p {
   flex-direction: column;
   align-items: center;
   box-shadow: 2px 1px 8px black;
-  background: rgba(29, 28, 28, 0.555);
+  background: rgba(29, 28, 28, 0.755);
 }

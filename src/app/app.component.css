@@ -6,11 +6,3 @@ body {
   scroll-behavior: smooth;
   transform: all 0.2 ease;
 }
-
-.router1 {
-  border: 1px solid black;
-  height: 90vh;
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  box-sizing: border-box;
-}
