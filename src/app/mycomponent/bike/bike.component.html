@@ -1,8 +1,8 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
-        <li class="breadcrumb-item"><a routerLink="/Brand/{{result[0].b_brand}}">{{result[0].b_brand}}</a></li>
-        <li class="breadcrumb-item active" aria-current="page">{{result[0].b_name}}</li>
+        <li class="breadcrumb-item"><a routerLink="/Brand/{{result[0].brand}}">{{result[0].brand}}</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{result[0].name}}</li>
     </ol>
 </nav>
 
@@ -10,20 +10,20 @@
 
     <div class="row">
         <div class="col-12 col-md-6">
-            <img src="{{result[0].b_img}}" alt="" class="img-fluid">
+            <img src="{{result[0].img}}" alt="" class="img-fluid">
         </div>
 
         <div class="col-12 col-md-6">
-            <h4 id="bikename">{{result[0].b_name}} <small>{{result[0].b_bsversion}}</small></h4>
-            <p class="text-justify">{{result[0].b_Description}}</p>
-            <h5 id="onprice" aria-describedby="onroad">&#8377;{{result[0].b_price}}</h5>
+            <h4 id="bikename">{{result[0].name}} <small>{{result[0].bsversion}}</small></h4>
+            <p class="text-justify">{{result[0].Description}}</p>
+            <h5 id="onprice" aria-describedby="onroad">&#8377;{{result[0].price}}</h5>
             <small id="onroad">Ex-showroom Price [Delhi]</small>
 
             <div class="my-3">
                 <h6>Colors Available</h6>
                 <div class="d-flex">
-                    <div *ngFor="let color of result[0].b_colors" class="round mr-2">
-                        <div class="color" style="background: {{color}}"></div>
+                    <div *ngFor="let c of result[0].colors" class="round mr-2">
+                        <div class="color" style="background: {{ c.color }}"></div>
                     </div>
                 </div>
             </div>
@@ -32,103 +32,44 @@
 
     <div>
         <hr />
-        <h5 class="bg-light font-weight-bold">Full Details</h5>
-        <table>
-            <h6 class="mt-4 pt-2">General</h6>
-            <tr>
-                <td>Model</td>
-                <td>{{result[0].b_name}}</td>
-            </tr>
+        <h5 class="bg-light font-weight-bold">Full Specifications</h5>
+        <div class="p-4 border d-flex justify-content-around mb-2">
+            <div class="">
+                <h6 class="mt-4 pt-2">General</h6>
+                <div>
+                    <div>Model: {{result[0].name}}</div>
+                    <div>Brand : {{result[0].brand}}</div>
+                    <div>BS Version : {{result[0].bsversion}}</div>
+                    <div>Bike Type : {{result[0].type}}</div>
+                    <div>Miledge : {{result[0].miledge}} kmpl</div>
+                </div>
+            </div>
 
-            <tr>
-                <td>Brand</td>
-                <td>{{result[0].b_brand}}</td>
-            </tr>
 
-            <tr>
-                <td>BS Version</td>
-                <td>{{result[0].b_bsversion}}</td>
-            </tr>
+            <div class="">
+                <h6 class="mt-4 pt-2">Mechanism</h6>
+                <div>
+                    <div>Displacement : {{result[0].displacement}} CC</div>
+                    <div> Power : {{result[0].max_power}} bhp</div>
+                    <div>Wheel Type : {{result[0].wheeltype}}</div>
+                    <div>Rear Break : {{result[0].rearbreaking}}</div>
+                    <div>Frong Break : {{result[0].frontbreaking}}</div>
+                </div>
+            </div>
 
-            <tr>
-                <td>Bike Type</td>
-                <td>{{result[0].b_type}}</td>
-            </tr>
 
-            <tr>
-                <td>
-                    Miledge
-                </td>
-                <td>{{result[0].b_miledge}} kmpl</td>
-            </tr>
+            <div class="">
+                <h6 class="mt-4 pt-2">Dimentions</h6>
 
-            <h6 class="mt-4 pt-2">Mechanism</h6>
-
-            <tr>
-                <td>Displacement
-                </td>
-                <td>{{result[0].b_displacement}} CC</td>
-            </tr>
-
-            <tr>
-                <td>
-                    Power
-                </td>
-                <td>{{result[0].b_max_power}} bhp</td>
-            </tr>
-
-            <tr>
-                <td>
-                    Wheel Type
-                </td>
-                <td>{{result[0].b_wheeltype}} kmpl</td>
-            </tr>
-
-            <tr>
-                <td>
-                    Rear Break
-                </td>
-                <td>{{result[0].b_rearbreaking}}</td>
-            </tr>
-
-            <tr>
-                <td>
-                    Frong Break
-                </td>
-                <td>{{result[0].b_frontbreaking}}</td>
-            </tr>
-
-            <h6 class="mt-4 pt-2">Dimentions</h6>
-
-            <tr>
-                <td> Weight </td>
-                <td> {{result[0].b_weight}} Kg</td>
-            </tr>
-
-            <tr>
-                <td> Width </td>
-                <td> {{result[0].b_width}} cm</td>
-            </tr>
-
-            <tr>
-                <td> Height </td>
-                <td> {{result[0].b_height}} cm</td>
-            </tr>
-
-            <tr>
-                <td> Lenght </td>
-                <td> {{result[0].b_lenght}} cm</td>
-            </tr>
-
-            <tr>
-                <td> Front Wheel Size </td>
-                <td> {{result[0].b_frontwheelsize}} cm</td>
-            </tr>
-
-            <tr>
-                <td> Rear Wheel Size </td>
-                <td> {{result[0].b_rearwheelsize}} cm</td>
-            </tr>
-        </table>
+                <div>
+                    <div> Weight : {{result[0].weight}} Kg</div>
+                    <div> Width : {{result[0].width}} cm</div>
+                    <div> Height : {{result[0].height}} cm</div>
+                    <div> Lenght : {{result[0].lenght}} cm </div>
+                    <div> Front Wheel Size : {{result[0].frontwheelsize}} cm</div>
+                    <div> Rear Wheel Size : {{result[0].rearwheelsize}} cm</div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
