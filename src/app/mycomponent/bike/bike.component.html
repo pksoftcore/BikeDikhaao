@@ -23,7 +23,7 @@
                 <h6>Colors Available</h6>
                 <div class="d-flex">
                     <div *ngFor="let c of result[0].colors" class="round mr-2">
-                        <div class="color" style="background: {{ c.color }}"></div>
+                        <div class="color" style="background: '{{ c.color }}'"></div>
                     </div>
                 </div>
             </div>
@@ -32,42 +32,44 @@
 
     <div>
         <hr />
-        <h5 class="bg-light font-weight-bold">Full Specifications</h5>
-        <div class="p-4 border d-flex justify-content-around mb-2">
-            <div class="">
-                <h6 class="mt-4 pt-2">General</h6>
-                <div>
-                    <div>Model: {{result[0].name}}</div>
-                    <div>Brand : {{result[0].brand}}</div>
-                    <div>BS Version : {{result[0].bsversion}}</div>
-                    <div>Bike Type : {{result[0].type}}</div>
-                    <div>Miledge : {{result[0].miledge}} kmpl</div>
+        <div class="bg-white p-4 ">
+            <h5 class="m-2 font-weight-bold">Full Specifications</h5>
+            <div class="d-flex flex-column flex-lg-row justify-content-around mb-2">
+                <div class="bg-light m-2 border p-4 rounded">
+                    <h6 class="border-bottom">General</h6>
+                    <div>
+                        <div> <span class="font-weight-bold">Model: </span> {{result[0].name}}</div>
+                        <div> <span class="font-weight-bold"> Brand : </span> {{result[0].brand}}</div>
+                        <div><span class="font-weight-bold">BS Version :</span> {{result[0].bsversion}}</div>
+                        <div><span class="font-weight-bold">Bike Type : </span> {{result[0].type}}</div>
+                        <div><span class="font-weight-bold">Miledge : </span> {{result[0].miledge}} kmpl</div>
+                    </div>
                 </div>
-            </div>
-
-
-            <div class="">
-                <h6 class="mt-4 pt-2">Mechanism</h6>
-                <div>
-                    <div>Displacement : {{result[0].displacement}} CC</div>
-                    <div> Power : {{result[0].max_power}} bhp</div>
-                    <div>Wheel Type : {{result[0].wheeltype}}</div>
-                    <div>Rear Break : {{result[0].rearbreaking}}</div>
-                    <div>Frong Break : {{result[0].frontbreaking}}</div>
+    
+    
+                <div class="bg-light m-2 border p-4 rounded">
+                    <h6 class="border-bottom">Mechanism</h6>
+                    <div>
+                        <div><span class="font-weight-bold">Displacement :</span> {{result[0].displacement}} CC</div>
+                        <div> <span class="font-weight-bold">Power :</span> {{result[0].max_power}} bhp</div>
+                        <div><span class="font-weight-bold">Wheel Type :</span> {{result[0].wheeltype}}</div>
+                        <div><span class="font-weight-bold">Rear Break : </span> {{result[0].rearbreaking}}</div>
+                        <div><span class="font-weight-bold">Frong Break :</span> {{result[0].frontbreaking}}</div>
+                    </div>
                 </div>
-            </div>
-
-
-            <div class="">
-                <h6 class="mt-4 pt-2">Dimentions</h6>
-
-                <div>
-                    <div> Weight : {{result[0].weight}} Kg</div>
-                    <div> Width : {{result[0].width}} cm</div>
-                    <div> Height : {{result[0].height}} cm</div>
-                    <div> Lenght : {{result[0].lenght}} cm </div>
-                    <div> Front Wheel Size : {{result[0].frontwheelsize}} cm</div>
-                    <div> Rear Wheel Size : {{result[0].rearwheelsize}} cm</div>
+    
+    
+                <div class="bg-light m-2 border p-4 rounded">
+                    <h6 class="border-bottom">Dimentions</h6>
+    
+                    <div>
+                        <div> <span class="font-weight-bold">Weight :</span> {{result[0].weight}} Kg</div>
+                        <div> <span class="font-weight-bold"> Width : </span>{{result[0].width}} cm</div>
+                        <div> <span class="font-weight-bold">Height : </span> {{result[0].height}} cm</div>
+                        <div> <span class="font-weight-bold">Lenght :</span> {{result[0].lenght}} cm </div>
+                        <div> <span class="font-weight-bold">Front Wheel Size :</span> {{result[0].frontwheelsize}} cm</div>
+                        <div> <span class="font-weight-bold">Rear Wheel Size :</span> {{result[0].rearwheelsize}} cm</div>
+                    </div>
                 </div>
             </div>
         </div>
