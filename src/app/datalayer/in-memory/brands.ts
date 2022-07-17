@@ -1,4 +1,4 @@
-import { Brand } from "../models/types/brand";
+import { Brand } from "../../models/types/brand";
 
 export const getBrandsList = (): Brand[] => ([
     {

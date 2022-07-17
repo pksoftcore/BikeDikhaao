@@ -1,14 +1,14 @@
-<div>
+<div class="w-100">
     <div class="row">
-        <div *ngFor="let item of category" class="col-4 col-md-2 col-xl-2">
-            <div class="mb-4">
-                <div class=" p-0 m-0">
-                    <img class="card-img-top" src={{item.cat_img}}
+        <div *ngFor="let item of category" class="col-6 col-sm-4 col-md-3 col-xl-2">
+            <div class="d-flex hover box flex-column align-items-between mb-4 border p-2">
+                <div class="p-0 m-0">
+                    <img width="80px" height="80px" class="card-img-top my-3" src={{item.imgUrl}}
                         data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail"
                         alt="Card image cap">
                 </div>
-                <div class="card-body">
-                    <h4 class="text-center display-sm-6">{{item.cat_name}}</h4>
+                <div class="">
+                    <div class="text-center">{{item.name}}</div>
                 </div>
             </div>
         </div>

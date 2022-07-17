@@ -1,5 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { getBikesData } from 'src/app/datalayer/bikes';
+import { InMemoryBike } from 'src/app/datalayer/in-memory/bikes';
+import { Bike } from 'src/app/models/types/bike';
+
+function shuffleArray(array) {
+  for (var i = array.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (array.length));
+      var temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+  }
+  return array;
+}
 
 @Component({
   selector: 'app-card',
@@ -10,11 +21,12 @@ import { getBikesData } from 'src/app/datalayer/bikes';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-  bike = getBikesData();
+  bike: Bike[];
 
-  constructor() { }
+  constructor(private bikeService: InMemoryBike) { }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    const data = await this.bikeService.getAll()
+    this.bike = shuffleArray(data);
   }
-
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { getBrandsList } from 'src/app/datalayer/brands';
+import { getBrandsList } from 'src/app/datalayer/in-memory/brands';
 
 @Component({
   selector: 'app-brands',

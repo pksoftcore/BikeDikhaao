@@ -1,7 +1,9 @@
-.imgpad {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 150px;
+.box {
+    cursor: pointer; 
+    background: #eee;
+    border-radius: 10px;
+}
+
+.box:hover {
+    background: #fff;
 }

@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mnbody.component.css']
 })
 export class MnbodyComponent implements OnInit {
+  selectedTab = 'brands'
 
   constructor() { }
 

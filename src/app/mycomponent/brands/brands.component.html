@@ -1,8 +1,10 @@
 <div class="d-flex justify-content-center flex-wrap py-5">
-    <div style="width: 200px" class="p-2 d-flex align-items-center" *ngFor="let item of brand">
-        <a class="mw-100" routerLink="/Brand/{{item.name}}">
-            <img class="card-img-top mw-100" src={{item.img}}
-                data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
-        </a>
+    <div style="width: 200px; height: 200px" class="p-2 d-flex align-items-center" *ngFor="let item of brand">
+        <div class="w-100 d-flex align-items-center shadow p-4 h-100 m-auto border box">
+            <a routerLink="/Brand/{{item.name}}">
+                <img class="card-img-top mw-100" src={{item.img}}
+                    data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+            </a>
+        </div>
     </div>
 </div>

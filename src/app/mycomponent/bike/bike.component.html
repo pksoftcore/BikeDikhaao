@@ -1,8 +1,8 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
-        <li class="breadcrumb-item"><a routerLink="/Brand/{{result[0].brand}}">{{result[0].brand}}</a></li>
-        <li class="breadcrumb-item active" aria-current="page">{{result[0].name}}</li>
+        <li class="breadcrumb-item"><a routerLink="/Brand/{{bike.brand}}">{{bike.brand}}</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{bike.name}}</li>
     </ol>
 </nav>
 
@@ -10,20 +10,20 @@
 
     <div class="row">
         <div class="col-12 col-md-6">
-            <img src="{{result[0].img}}" alt="" class="img-fluid">
+            <img src="{{bike.img}}" alt="" class="img-fluid">
         </div>
 
         <div class="col-12 col-md-6">
-            <h4 id="bikename">{{result[0].name}} <small>{{result[0].bsversion}}</small></h4>
-            <p class="text-justify">{{result[0].Description}}</p>
-            <h5 id="onprice" aria-describedby="onroad">&#8377;{{result[0].price}}</h5>
+            <h4 id="bikename">{{bike.name}} <small>{{bike.bsversion}}</small></h4>
+            <p class="text-justify">{{bike.Description}}</p>
+            <h5 id="onprice" aria-describedby="onroad">&#8377;{{bike.price}}</h5>
             <small id="onroad">Ex-showroom Price [Delhi]</small>
 
             <div class="my-3">
                 <h6>Colors Available</h6>
                 <div class="d-flex">
-                    <div *ngFor="let c of result[0].colors" class="round mr-2">
-                        <div class="color" style="background: '{{ c.color }}'"></div>
+                    <div *ngFor="let c of bike.colors" class="round mr-2">
+                        <div class="color" style="background: {{ c.color }}"></div>
                     </div>
                 </div>
             </div>
@@ -35,40 +35,39 @@
         <div class="bg-white p-4 ">
             <h5 class="m-2 font-weight-bold">Full Specifications</h5>
             <div class="d-flex flex-column flex-lg-row justify-content-around mb-2">
-                <div class="bg-light m-2 border p-4 rounded">
+                <div class="bg-light box-width m-2 border shadow p-4 rounded">
                     <h6 class="border-bottom">General</h6>
                     <div>
-                        <div> <span class="font-weight-bold">Model: </span> {{result[0].name}}</div>
-                        <div> <span class="font-weight-bold"> Brand : </span> {{result[0].brand}}</div>
-                        <div><span class="font-weight-bold">BS Version :</span> {{result[0].bsversion}}</div>
-                        <div><span class="font-weight-bold">Bike Type : </span> {{result[0].type}}</div>
-                        <div><span class="font-weight-bold">Miledge : </span> {{result[0].miledge}} kmpl</div>
+                        <div> <span class="font-weight-bold">Model: </span> {{bike.name}}</div>
+                        <div> <span class="font-weight-bold"> Brand : </span> {{bike.brand}}</div>
+                        <div><span class="font-weight-bold">BS Version :</span> {{bike.bsversion}}</div>
+                        <div><span class="font-weight-bold">Bike Type : </span> {{bike.type}}</div>
+                        <div><span class="font-weight-bold">Miledge : </span> {{bike.miledge}} kmpl</div>
                     </div>
                 </div>
     
     
-                <div class="bg-light m-2 border p-4 rounded">
+                <div class="bg-light box-width m-2 shadow border p-4 rounded">
                     <h6 class="border-bottom">Mechanism</h6>
                     <div>
-                        <div><span class="font-weight-bold">Displacement :</span> {{result[0].displacement}} CC</div>
-                        <div> <span class="font-weight-bold">Power :</span> {{result[0].max_power}} bhp</div>
-                        <div><span class="font-weight-bold">Wheel Type :</span> {{result[0].wheeltype}}</div>
-                        <div><span class="font-weight-bold">Rear Break : </span> {{result[0].rearbreaking}}</div>
-                        <div><span class="font-weight-bold">Frong Break :</span> {{result[0].frontbreaking}}</div>
+                        <div><span class="font-weight-bold">Displacement :</span> {{bike.displacement}} CC</div>
+                        <div> <span class="font-weight-bold">Power :</span> {{bike.max_power}} bhp</div>
+                        <div><span class="font-weight-bold">Wheel Type :</span> {{bike.wheeltype}}</div>
+                        <div><span class="font-weight-bold">Rear Break : </span> {{bike.rearbreaking}}</div>
+                        <div><span class="font-weight-bold">Frong Break :</span> {{bike.frontbreaking}}</div>
                     </div>
                 </div>
     
     
-                <div class="bg-light m-2 border p-4 rounded">
+                <div class="bg-light box-width m-2 shadow border p-4 rounded">
                     <h6 class="border-bottom">Dimentions</h6>
-    
                     <div>
-                        <div> <span class="font-weight-bold">Weight :</span> {{result[0].weight}} Kg</div>
-                        <div> <span class="font-weight-bold"> Width : </span>{{result[0].width}} cm</div>
-                        <div> <span class="font-weight-bold">Height : </span> {{result[0].height}} cm</div>
-                        <div> <span class="font-weight-bold">Lenght :</span> {{result[0].lenght}} cm </div>
-                        <div> <span class="font-weight-bold">Front Wheel Size :</span> {{result[0].frontwheelsize}} cm</div>
-                        <div> <span class="font-weight-bold">Rear Wheel Size :</span> {{result[0].rearwheelsize}} cm</div>
+                        <div> <span class="font-weight-bold">Weight :</span> {{bike.weight}} Kg</div>
+                        <div> <span class="font-weight-bold"> Width : </span>{{bike.width}} cm</div>
+                        <div> <span class="font-weight-bold">Height : </span> {{bike.height}} cm</div>
+                        <div> <span class="font-weight-bold">Lenght :</span> {{bike.lenght}} cm </div>
+                        <div> <span class="font-weight-bold">Front Wheel Size :</span> {{bike.frontwheelsize}} cm</div>
+                        <div> <span class="font-weight-bold">Rear Wheel Size :</span> {{bike.rearwheelsize}} cm</div>
                     </div>
                 </div>
             </div>

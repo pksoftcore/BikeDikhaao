@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouteConfigLoadEnd } from '@angular/router';
-import { getBikesData } from 'src/app/datalayer/bikes';
+import { InMemoryBike } from 'src/app/datalayer/in-memory/bikes';
+import { Bike } from 'src/app/models/types/bike';
 
 @Component({
   selector: 'app-brand',
@@ -11,10 +12,11 @@ import { getBikesData } from 'src/app/datalayer/bikes';
 export class BrandComponent implements OnInit {
   brand = ""
   result = [];
-  bike = getBikesData()
-  constructor(private route: ActivatedRoute) { }
-  ngOnInit(): void {
+  bike: Bike[]
+  constructor(private route: ActivatedRoute, private bikeService: InMemoryBike) { }
+  async ngOnInit(): Promise<void> {
     this.brand = this.route.snapshot.params.id;
+    this.bike = await this.bikeService.getAll()
     this.result = this.bike.filter(obj => {
       return obj.brand === this.route.snapshot.params.id;
     });

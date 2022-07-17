@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { InMemoryBike } from 'src/app/datalayer/in-memory/bikes';
+import { Category } from 'src/app/models/types/category';
 
 @Component({
   selector: 'app-categories',
@@ -7,61 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriesComponent implements OnInit {
 
-  category = [
-    {
-      cat_name: "Scooter",
-      cat_img: "assets/images/cat/scooters.svg",
-    },
-
-    {
-      cat_name: "Sport",
-      cat_img: "assets/images/cat/sports.svg",
-    },
-
-    {
-      cat_name: "Cruisersr",
-      cat_img: "assets/images/cat/cruiser.svg",
-    },
-
-    {
-      cat_name: "Adventure",
-      cat_img: "assets/images/cat/adventure.svg",
-    },
-
-    {
-      cat_name: "Scrambler",
-      cat_img: "assets/images/cat/scrambler.svg",
-    },
-
-    {
-      cat_name: "Cafe Racer",
-      cat_img: "assets/images/cat/cafe-racer.svg",
-    },
-
-    {
-      cat_name: "Commuter",
-      cat_img: "assets/images/cat/commuter.svg",
-    },
-
-    {
-      cat_name: "Moped",
-      cat_img: "assets/images/cat/moped.svg",
-    },
-
-    {
-      cat_name: "Street Bikes",
-      cat_img: "assets/images/cat/street-bikes.svg",
-    },
-    {
-      cat_name: "Super Bikes",
-      cat_img: "assets/images/cat/super-bikes.svg",
-    }
-
-  ]
-
-  constructor() { }
+  category: Category
+  constructor(private bikeService: InMemoryBike) {}
 
   ngOnInit(): void {
+    const get = async () => {
+      this.category = await this.bikeService.getAllCategory()
+    }
+    get()
   }
 
 }

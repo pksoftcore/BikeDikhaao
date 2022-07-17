@@ -8,6 +8,10 @@ h6 {
   font-weight: bold;
 }
 
+.box-width {
+  min-width: 280px;
+}
+
 #bikename {
   font-weight: bold;
 }
