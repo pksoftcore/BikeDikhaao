@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { InMemoryBike } from 'src/app/datalayer/in-memory/bikes';
 import { Bike } from 'src/app/models/types/bike'
 
@@ -20,10 +20,13 @@ export class BikeComponent implements OnInit {
   ngOnInit(): void {
     window.scrollTo(0, 0)
     const get = async () => {
-      const id = this.route.snapshot.params.id
-      const bike = await this.bikeService.get(id);
-      console.log(bike);
-      this.bike = bike
+      this.route.params.subscribe(async (params: Params) => {
+        const id = params.id
+        // some stuff
+        const bike = await this.bikeService.get(id);
+        console.log(bike);
+        this.bike = bike
+      });
     }
     get();
   };

@@ -1,0 +1,14 @@
+<div style="width: 80vw; height: 80vh" class="justify-content-center align-items-center p-10 bg-light">
+    <div class="w-100 d-flex justify-content-center m-3">
+        <input autofocus placeholder="Search bikes" class="m-3 w-75 rounded p-3" #inp
+            (input)="handleChange(inp.value)" />
+    </div>
+    <div style="maxHeight: 70%" class="w-100 bg-red overflow-auto px-4">
+        <div class="w-100 my-2 border p-2 rounded-4 bg-white cursor-pointer" *ngFor="let d of searchedData">
+            <a class="d-flex align-items-center" routerLink="{{d.link}}" (click)="closeSearch(d.link)">
+                <img width="50px" height="40px" src="{{d.img}}" />
+                <div class="h6 text-dark ml-3">{{d.name}}</div>
+            </a>
+        </div>
+    </div>
+</div>
