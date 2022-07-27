@@ -13,6 +13,7 @@ import { CategoriesComponent } from './mycomponent/categories/categories.compone
 import { AboutComponent } from './mycomponent/about/about.component';
 import { BrandComponent } from './mycomponent/brand/brand.component';
 import { BikeComponent } from './mycomponent/bike/bike.component';
+import { SearchComponent } from './mycomponent/search/search.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { BikeComponent } from './mycomponent/bike/bike.component';
     CategoriesComponent,
     AboutComponent,
     BrandComponent,
-    BikeComponent
+    BikeComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

@@ -4,6 +4,8 @@ type BikeType = "Road Bike" | 'Sport Bike' | "Scooty" ;
 type CoolingType = "Air Cooled" | "Fan Cooled";
 type BodyType = "Cruisersr" | "Scooty" | "Commuter" | "Sport";
 
+export type SearchDataType = { id: string; name: string; link: string; img: string }
+
 export type Bike = {
     id: string;
     img: string,
