@@ -10,14 +10,14 @@ import { SearchDataType } from 'src/app/models/types/bike';
 })
 export class HeaderComponent implements OnInit {
   menustate: boolean = true;
-  showModal = 'd-none'
+  showModal = false
   searchedData: SearchDataType[] = []
   constructor(private bikeService: InMemoryBike, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  closeSearch = () => this.showModal = 'd-none'
+  closeSearch = () => this.showModal = false
 
   clicked = (link: string) => {
     this.closeSearch();
@@ -25,7 +25,7 @@ export class HeaderComponent implements OnInit {
   }
 
   handleChange = async (e) => {
-    const data = await this.bikeService.getAll({ search: e })
+    const data = await this.bikeService.getAll({ search: e || '' })
     this.searchedData = data.map(d => ({
       ...d,
       link: `Bike/${d.id}`
@@ -33,8 +33,8 @@ export class HeaderComponent implements OnInit {
   }
 
   openSearch = (e, toggler) => {
-    this.showModal = 'd-flex';
-    toggler.click()
+    this.showModal = true;
+    if (window.innerWidth < 992) toggler.click()
     e.blur()
   }
 
