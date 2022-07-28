@@ -17,8 +17,11 @@ export class InMemoryBike implements BikeInerface{
 
   async getAll(filter?: { search?: string }): Promise<Bike[]> {
     const data = await sampleBikes;
-    if (!filter && !filter.search) return data;
-    return data.filter(d => d.name.toLowerCase().includes(filter.search.toLocaleLowerCase())) 
+    if (filter) {
+      if (filter.search === '') return [];
+      return data.filter(d => d.name.toLowerCase().includes(filter.search.toLocaleLowerCase()));
+    }
+    return data;
   }
 
   async get(id: string): Promise<Bike | null> {

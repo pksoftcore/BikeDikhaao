@@ -1,5 +1,5 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Bike Dikhao</a>
+    <a class="navbar-brand" routerLink="/">Bike Dikhao</a>
     <button #toggler class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -22,8 +22,10 @@
         </form>
     </div>
 </nav>
-<div style="width: 100vw; height: 100vh; position: fixed; z-index: 50"
-    class="justify-content-center align-items-center slide-in-down" [class]="showModal">
+<div
+    *ngIf="showModal"
+    style="width: 100vw; height: 100vh; position: fixed; z-index: 50"
+    class="justify-content-center align-items-center d-flex slide-in-down">
     <div #close style="height: 100vh; position:absolute; width: 100vw; z-index: -1; backgroundColor: rgba(0,0,0,0.3);"
         (click)="closeSearch()"></div>
     <app-search [handleChange]="handleChange" [searchedData]="searchedData" [closeSearch]="clicked"></app-search>
